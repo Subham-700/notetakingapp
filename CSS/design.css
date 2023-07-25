@@ -1,0 +1,24 @@
+.hand{
+    cursor:pointer;
+}
+.margin{
+    margin-bottom: 50px;
+}
+/* .fa-sort-down,fa-sort-up{
+   position: absolute;
+   transform:translateY(0%) ;
+  top: 70%;
+} */
+/* #tup{
+    right: 0;
+} */
+/* #tdown{
+    right:0;
+} */
+/* #cdup {
+    right: 0;
+}
+
+#cddown {
+    right: 0;
+} 

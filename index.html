@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes Taking Application</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/design.css" />
+    <script
+      type="module"
+      src="scripts/controllers/notes-controller.js"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="alert alert-info text-center">Notes Taking Application</h1>
+      <div class="form-group">
+        <label>Id</label>
+        <input
+          id="id"
+          class="form-control"
+          type="text"
+          placeholder="Type Id here"
+        />
+      </div>
+      <div class="form-group">
+        <label>Title </label>
+        <input
+          id="title"
+          class="form-control"
+          type="text"
+          placeholder="Type Title here"
+        />
+      </div>
+      <div class="form-group">
+        <label>Desc</label>
+        <textarea
+          id="desc"
+          class="form-control"
+          cols="20"
+          rows="5"
+          placeholder="Type Desc Here"
+        >
+        </textarea>
+      </div>
+      <div class="form-group">
+        <label>Completion Date </label>
+        <input
+          id="cdate"
+          class="form-control"
+          type="date"
+          placeholder="Type Title here"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Importance </label>
+        <input
+          id="importance"
+          class="form-control"
+          type="color"
+          placeholder="Type Title here"
+        />
+      </div>
+      <div class="text-center">
+        <br />
+        <button id="add" class="btn btn-primary">Add</button>
+        <button id="delete" class="btn btn-danger">Delete</button>
+        <div class="btn-group">
+          <button
+            type="button"
+            class="btn btn-danger dropdown-toggle"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Search
+          </button>
+          <div class="dropdown-menu">
+            <button id="searchId" class="dropdown-item" >Search By ID</button>
+            <button id="searchTitle" class="dropdown-item" >Search By Title</button>
+          </div>
+        </div>
+        <button id="update" class="btn btn-warning">Update</button>
+        <button class="btn btn-success">Save</button>
+        <button class="btn btn-secondary">Load</button>
+        <button id="clear" class="btn btn-danger">Clear All</button>
+        <button class="btn btn-success">Save to Server</button>
+        <button class="btn btn-secondary">Load from Server</button>
+      </div>
+      <div class="margin"></div>
+      <div>
+        <h3>
+          Total Records <span id="total"></span> Mark Records
+          <span id="marktotal"></span> UnMark Records
+          <span id="unmarktotal"></span>
+        </h3>
+      </div>
+      <table class="table table-bordered">
+        <thead class="table-dark">
+          <tr>
+            <th>ID</th>
+            <th id="title">
+              Title
+              <i id="tup" class="fa-sharp fa-solid fa-sort-up me-3 hand"></i>
+              <i id="tdown" class="fa-solid fa-sort-down hand"></i>
+            </th>
+            <th>Desc</th>
+            <th id="cdate">
+              Completion Date
+              <i id="cdup" class="fa-sharp fa-solid fa-sort-up me-3 hand"></i>
+              <i id="cddown" class="fa-solid fa-sort-down hand"></i>
+            </th>
+            <th>Importance</th>
+            <th>Operations</th>
+          </tr>
+        </thead>
+        <tbody id="notes">
+          <!-- Dynamic Records will be come here -->
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
